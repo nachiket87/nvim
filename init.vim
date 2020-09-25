@@ -40,7 +40,10 @@ Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-bundler'
 Plug 'tpope/vim-rails'
 Plug 'tpope/vim-surround'
-
+Plug 'pangloss/vim-javascript'
+Plug 'leafgarland/typescript-vim'
+Plug 'peitalin/vim-jsx-typescript'
+Plug 'jparise/vim-graphql'
 
 call plug#end()
 command! -nargs=0 Prettier :CocCommand prettier.formatFile
