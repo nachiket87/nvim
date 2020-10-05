@@ -3,7 +3,7 @@ window:
   dimensions:
     columns: 150
     lines: 45
-    decorations: full
+    decorations: none
   history: 1000
 
 font:
