@@ -78,6 +78,7 @@ nnoremap <leader>- :vertical resize -5<CR>
 
 let g:fzf_layout = { 'window': { 'width': 0.8, 'height': 0.8 } }
 let $FZF_DEFAULT_OPTS='--reverse'
+
 if executable('rg')
     let g:rg_derive_root='true'
 endif
