@@ -110,8 +110,8 @@ inoremap <silent><expr> <Tab>
 inoremap <silent><expr> <S-Tab> pumvisible() ? "\<C-P>" : "\<C-H>"
 inoremap <expr> <CR> pumvisible() ? "\<C-Y>" : "\<CR>"
 nmap <leader>gs :G<CR>
-nmap <leader>gu :diffget //3<CR>
-nmap <leader>gh :diffget //2<CR>
+nmap <leader>gj :diffget //3<CR>
+nmap <leader>gf :diffget //2<CR>
 
 colorscheme gruvbox
 highlight Normal ctermbg=none
