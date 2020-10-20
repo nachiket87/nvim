@@ -1,7 +1,6 @@
 {
   "javascript.suggestionActions.enabled": false,
   "python.jediEnabled": false,
-  "python.setLinter": true,
   "clangd.path": "/Users/nachiketpusalkar/.config/coc/extensions/coc-clangd-data/install/10.0.0/clangd_10.0.0/bin/clangd",
   "eslint.autoFixOnSave": true,
   "eslint.filetypes": ["javascript", "javascriptreact", "typescript", "typescriptreact"],
@@ -9,9 +8,8 @@
       "javascript",
       "javascriptreact",
       "typescript",
-      "typescriptreact"
+      "typescriptreact", "css", "markdown"
     ],
     "tsserver.formatOnType": true,
     "coc.preferences.formatOnType": true
 }
-
