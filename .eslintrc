@@ -4,6 +4,7 @@
     "node": true,
     "es6": true
   },
+  "parser": "babel-eslint",
 
   "plugins": ["prettier", "react"],
 
@@ -33,5 +34,8 @@
   },
   "rules": {
     "quotes": [1, "single"]
-  }
+  }, 
+  "parserOptions": {
+      "sourceType": "module"
+    }
 }
