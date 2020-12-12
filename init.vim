@@ -22,8 +22,7 @@ set undofile
 set incsearch
 set scrolloff=8
 set noshowmode
-"let loaded_matchparen = 1
-
+let loaded_matchparen = 1        " Turn off parenthesis match highlighting.
 
 call plug#begin('~/.config/plugged')
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
@@ -44,8 +43,10 @@ Plug 'pangloss/vim-javascript'
 Plug 'leafgarland/typescript-vim'
 Plug 'peitalin/vim-jsx-typescript'
 Plug 'jparise/vim-graphql'
-
+Plug 'honza/vim-snippets'
+Plug 'ryanoasis/vim-devicons'
 call plug#end()
+
 command! -nargs=0 Prettier :CocCommand prettier.formatFile
 inoremap <silent><expr> <C-space> coc#refresh()
 let mapleader = " "
@@ -88,8 +89,8 @@ let g:fzf_action = {
   \ 'ctrl-s': 'split',
   \ 'ctrl-v': 'vsplit'
   \}
-let g:python3_host_prog = '/usr/local/Cellar/python@3.8/3.8.5/bin/python3'
-let g:loaded_python_provider = 0
+let g:python3_host_prog = '/usr/local/Cellar/python@3.9/3.9.0_1/bin/python3'
+"let g:loaded_python_provider = 0
 
 let g:airline_powerline_fonts = 1
 let $NVIM_TUI_ENABLE_CURSOR_SHAPE = 1
@@ -113,6 +114,11 @@ nmap <leader>gs :G<CR>
 nmap <leader>gj :diffget //3<CR>
 nmap <leader>gf :diffget //2<CR>
 
-colorscheme gruvbox
 highlight Normal ctermbg=none
 highlight NonText ctermbg=none
+colorscheme gruvbox
+augroup filetype_jsx
+    autocmd!
+    autocmd FileType jsx set filetype=javascript
+augroup END
+
