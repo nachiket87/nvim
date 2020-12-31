@@ -121,4 +121,3 @@ augroup filetype_jsx
     autocmd!
     autocmd FileType jsx set filetype=javascript
 augroup END
-

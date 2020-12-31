@@ -7,7 +7,8 @@
       "javascript",
       "javascriptreact",
       "typescript",
-      "typescriptreact", "css", "markdown"
+      "typescriptreact", "css", "markdown",
+      "ruby"
   ],
   "tsserver.formatOnType": true,
   "coc.preferences.formatOnType": true,
