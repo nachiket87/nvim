@@ -45,6 +45,7 @@ Plug 'peitalin/vim-jsx-typescript'
 Plug 'jparise/vim-graphql'
 Plug 'honza/vim-snippets'
 Plug 'ryanoasis/vim-devicons'
+Plug 'rust-lang/rust.vim'
 call plug#end()
 
 command! -nargs=0 Prettier :CocCommand prettier.formatFile
@@ -121,3 +122,5 @@ augroup filetype_jsx
     autocmd!
     autocmd FileType jsx set filetype=javascript
 augroup END
+syntax enable
+filetype plugin indent on
