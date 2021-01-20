@@ -46,6 +46,7 @@ Plug 'jparise/vim-graphql'
 Plug 'honza/vim-snippets'
 Plug 'ryanoasis/vim-devicons'
 Plug 'rust-lang/rust.vim'
+Plug 'dbeniamine/cheat.sh-vim'
 call plug#end()
 
 command! -nargs=0 Prettier :CocCommand prettier.formatFile
