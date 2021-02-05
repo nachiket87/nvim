@@ -91,7 +91,8 @@ let g:fzf_action = {
   \ 'ctrl-s': 'split',
   \ 'ctrl-v': 'vsplit'
   \}
-let g:python3_host_prog = '/usr/local/Cellar/python@3.9/3.9.0_1/bin/python3'
+let g:python3_host_prog = '/usr/local/Cellar/python@3.9/3.9.1_6/bin/python3'
+
 "let g:loaded_python_provider = 0
 
 let g:airline_powerline_fonts = 1
@@ -113,8 +114,8 @@ inoremap <silent><expr> <Tab>
 inoremap <silent><expr> <S-Tab> pumvisible() ? "\<C-P>" : "\<C-H>"
 inoremap <expr> <CR> pumvisible() ? "\<C-Y>" : "\<CR>"
 nmap <leader>gs :G<CR>
-nmap <leader>gj :diffget //3<CR>
-nmap <leader>gf :diffget //2<CR>
+nmap <leader>gl :diffget //3<CR>
+nmap <leader>ga :diffget //2<CR>
 
 highlight Normal ctermbg=none
 highlight NonText ctermbg=none

@@ -2,12 +2,6 @@
   "javascript.suggestionActions.enabled": false,
   "clangd.path": "/Users/nachiketpusalkar/.config/coc/extensions/coc-clangd-data/install/10.0.0/clangd_10.0.0/bin/clangd",
   "eslint.autoFixOnSave": true,
-  "eslint.filetypes": [
-    "javascript",
-    "javascriptreact",
-    "typescript",
-    "typescriptreact"
-  ],
   "coc.preferences.formatOnSaveFiletypes": [
     "javascript",
     "JSON",
@@ -16,7 +10,8 @@
     "typescriptreact",
     "css",
     "markdown",
-    "ruby"
+    "ruby",
+    "eruby"
   ],
   "tsserver.formatOnType": true,
   "coc.preferences.formatOnType": true,
