@@ -1,6 +1,5 @@
 {
   "javascript.suggestionActions.enabled": false,
-  "clangd.path": "/Users/nachiketpusalkar/.config/coc/extensions/coc-clangd-data/install/10.0.0/clangd_10.0.0/bin/clangd",
   "eslint.autoFixOnSave": true,
   "coc.preferences.formatOnSaveFiletypes": [
     "javascript",
@@ -10,13 +9,13 @@
     "typescriptreact",
     "css",
     "markdown",
-    "ruby",
     "eruby"
   ],
   "tsserver.formatOnType": true,
   "coc.preferences.formatOnType": true,
   "snippets.extends": {
     "typescript": ["javascript"],
-    "javascriptreact": ["javascript"]
+    "javascriptreact": ["javascript"],
+    "typescriptreact": ["javascript"]
   }
 }

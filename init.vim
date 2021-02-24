@@ -27,6 +27,7 @@ let loaded_matchparen = 1        " Turn off parenthesis match highlighting.
 call plug#begin('~/.config/plugged')
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 let g:coc_global_extensions = ['coc-emmet', 'coc-css', 'coc-html', 'coc-json', 'coc-prettier', 'coc-tsserver', 'coc-eslint']
+Plug 'vuciv/vim-bujo'
 Plug 'gruvbox-community/gruvbox'
 Plug 'arcticicestudio/nord-vim'
 Plug 'dracula/vim'
@@ -45,8 +46,9 @@ Plug 'peitalin/vim-jsx-typescript'
 Plug 'jparise/vim-graphql'
 Plug 'honza/vim-snippets'
 Plug 'ryanoasis/vim-devicons'
-Plug 'rust-lang/rust.vim'
-Plug 'dbeniamine/cheat.sh-vim'
+Plug 'nvim-lua/popup.nvim'
+Plug 'nvim-lua/plenary.nvim'
+Plug 'nvim-telescope/telescope.nvim'
 call plug#end()
 
 command! -nargs=0 Prettier :CocCommand prettier.formatFile
@@ -74,6 +76,7 @@ nnoremap <leader>4 4gt<CR>
 nnoremap <leader>5 5gt<CR>
 nnoremap <leader>v :vsplit<CR>
 nnoremap <leader>+ :vertical resize +5<CR>
+nnoremap <Leader><CR> :e ~/.config/nvim/init.vim<CR>
 command! -bang -nargs=* Rg
   \ call fzf#vim#grep(
   \   'rg --column --line-number --no-heading --color=always --smart-case -- '.shellescape(<q-args>), 1,
@@ -92,9 +95,9 @@ let g:fzf_action = {
   \ 'ctrl-s': 'split',
   \ 'ctrl-v': 'vsplit'
   \}
-let g:python3_host_prog = '/usr/local/Cellar/python@3.9/3.9.1_6/bin/python3'
+"let g:python3_host_prog = '/usr/local/Cellar/python@3.9/3.9.1_6/bin/python3'
 " uncommnet below and comment above if you can't find python path.
-"let g:loaded_python_provider = 0
+let g:loaded_python_provider = 0
 
 let g:airline_powerline_fonts = 1
 let $NVIM_TUI_ENABLE_CURSOR_SHAPE = 1
@@ -127,3 +130,35 @@ augroup filetype_jsx
 augroup END
 syntax enable
 filetype plugin indent on
+
+" telescope to see the sun
+
+lua << EOF
+local actions = require('telescope.actions')
+require('telescope').setup {
+  defaults = {
+    file_sorter = require('telescope.sorters').get_fzy_sorter,
+    prompt_prefix = ' >',
+    color_devicons = true,
+
+    mappings = {
+      i = {
+        ["<C-x>"] = false,
+        ["<C-s>"] = actions.goto_file_selection_split,
+        ["<C-q>"] = actions.send_to_qflist,
+      },
+    }
+  }
+}
+EOF
+
+nnoremap <leader>ff <cmd>Telescope find_files<cr>
+nnoremap <leader>fg :lua require('telescope.builtin').grep_string({ search = vim.fn.input("Grep For > ")})<CR>
+nnoremap <leader>fr :lua require('telescope.builtin').grep_string { search = vim.fn.expand("<cword>") }<CR>
+nnoremap <leader>fb <cmd>Telescope buffers<cr>
+
+" Bujo
+
+nnoremap <leader>gt <cmd>Todo g<cr>
+nmap <C-S> <Plug>BujoAddnormal
+nmap <C-Q> <Plug>BujoChecknormal
