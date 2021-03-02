@@ -26,11 +26,8 @@ let loaded_matchparen = 1        " Turn off parenthesis match highlighting.
 
 call plug#begin('~/.config/plugged')
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
-let g:coc_global_extensions = ['coc-emmet', 'coc-css', 'coc-html', 'coc-json', 'coc-prettier', 'coc-tsserver', 'coc-eslint']
-Plug 'vuciv/vim-bujo'
+let g:coc_global_extensions = ['coc-emmet', 'coc-css', 'coc-html', 'coc-json', 'coc-tsserver', 'coc-eslint', 'coc-solargraph', 'coc-prettier']
 Plug 'gruvbox-community/gruvbox'
-Plug 'arcticicestudio/nord-vim'
-Plug 'dracula/vim'
 Plug 'scrooloose/nerdtree'
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'junegunn/fzf.vim'
@@ -49,6 +46,7 @@ Plug 'ryanoasis/vim-devicons'
 Plug 'nvim-lua/popup.nvim'
 Plug 'nvim-lua/plenary.nvim'
 Plug 'nvim-telescope/telescope.nvim'
+Plug 'nvim-telescope/telescope-fzy-native.nvim'
 call plug#end()
 
 command! -nargs=0 Prettier :CocCommand prettier.formatFile
@@ -59,7 +57,6 @@ nmap <silent> gy <Plug>(coc-type-definition)
 nmap <silent> gi <Plug>(coc-implementation)
 nmap <silent> gr <Plug>(coc-references)
 nnoremap <leader>h :wincmd h<CR>
-nnoremap <Leader>\ :edit ~/.config/nvim/init.vim<CR>
 nnoremap <leader>j :wincmd j<CR>
 nnoremap <leader>k :wincmd k<CR>
 nnoremap <leader>l :wincmd l<CR>
@@ -95,12 +92,16 @@ let g:fzf_action = {
   \ 'ctrl-s': 'split',
   \ 'ctrl-v': 'vsplit'
   \}
+
 "let g:python3_host_prog = '/usr/local/Cellar/python@3.9/3.9.1_6/bin/python3'
 " uncommnet below and comment above if you can't find python path.
 let g:loaded_python_provider = 0
 
 let g:airline_powerline_fonts = 1
-let $NVIM_TUI_ENABLE_CURSOR_SHAPE = 1
+
+"enables cursor changing below
+set guicursor=n-v-c:block,i-ci-ve:ver10,r-cr:hor20,o:hor50
+
 autocmd FileType * setlocal formatoptions-=c formatoptions-=r formatoptions-=o
 hi Normal guibg=NONE ctermbg=NONE
 
@@ -123,42 +124,37 @@ nmap <leader>ga :diffget //2<CR>
 
 highlight Normal ctermbg=none
 highlight NonText ctermbg=none
+
 colorscheme gruvbox
+
 augroup filetype_jsx
     autocmd!
     autocmd FileType jsx set filetype=javascript
 augroup END
+
 syntax enable
+
 filetype plugin indent on
 
 " telescope to see the sun
 
-lua << EOF
-local actions = require('telescope.actions')
-require('telescope').setup {
-  defaults = {
-    file_sorter = require('telescope.sorters').get_fzy_sorter,
-    prompt_prefix = ' >',
-    color_devicons = true,
-
-    mappings = {
-      i = {
-        ["<C-x>"] = false,
-        ["<C-s>"] = actions.goto_file_selection_split,
-        ["<C-q>"] = actions.send_to_qflist,
-      },
-    }
-  }
-}
-EOF
-
-nnoremap <leader>ff <cmd>Telescope find_files<cr>
+  
+nnoremap <leader>ff <cmd>Telescope find_files<cr> 
 nnoremap <leader>fg :lua require('telescope.builtin').grep_string({ search = vim.fn.input("Grep For > ")})<CR>
-nnoremap <leader>fr :lua require('telescope.builtin').grep_string { search = vim.fn.expand("<cword>") }<CR>
 nnoremap <leader>fb <cmd>Telescope buffers<cr>
 
-" Bujo
+" map :W to w
+command W w
 
-nnoremap <leader>gt <cmd>Todo g<cr>
-nmap <C-S> <Plug>BujoAddnormal
-nmap <C-Q> <Plug>BujoChecknormal
+" lua to user FZF no idea if this working
+lua << EOF
+  require('telescope').setup {
+      extensions = {
+          fzy_native = {
+              override_generic_sorter = true,
+              override_file_sorter = true,
+          }
+      }
+  }
+  require('telescope').load_extension('fzy_native')
+EOF
