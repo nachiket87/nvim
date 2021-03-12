@@ -34,9 +34,11 @@ Plug 'junegunn/fzf.vim'
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
 Plug 'tpope/vim-fugitive'
+Plug 'tpope/vim-rhubarb'
 Plug 'tpope/vim-bundler'
 Plug 'tpope/vim-rails'
 Plug 'tpope/vim-surround'
+Plug 'airblade/vim-gitgutter'
 Plug 'pangloss/vim-javascript'
 Plug 'leafgarland/typescript-vim'
 Plug 'peitalin/vim-jsx-typescript'
@@ -47,6 +49,7 @@ Plug 'nvim-lua/popup.nvim'
 Plug 'nvim-lua/plenary.nvim'
 Plug 'nvim-telescope/telescope.nvim'
 Plug 'nvim-telescope/telescope-fzy-native.nvim'
+Plug 'nvim-telescope/telescope-github.nvim'
 call plug#end()
 
 command! -nargs=0 Prettier :CocCommand prettier.formatFile
@@ -74,6 +77,7 @@ nnoremap <leader>5 5gt<CR>
 nnoremap <leader>v :vsplit<CR>
 nnoremap <leader>+ :vertical resize +5<CR>
 nnoremap <Leader><CR> :e ~/.config/nvim/init.vim<CR>
+nnoremap <leader>gb :Buffers<CR>
 command! -bang -nargs=* Rg
   \ call fzf#vim#grep(
   \   'rg --column --line-number --no-heading --color=always --smart-case -- '.shellescape(<q-args>), 1,
@@ -143,8 +147,9 @@ nnoremap <leader>ff <cmd>Telescope find_files<cr>
 nnoremap <leader>fg :lua require('telescope.builtin').grep_string({ search = vim.fn.input("Grep For > ")})<CR>
 nnoremap <leader>fb <cmd>Telescope buffers<cr>
 
-" map :W to w
+" map :W to w and :Q to q
 command W w
+command Q q
 
 " lua to user FZF no idea if this working
 lua << EOF
@@ -157,4 +162,5 @@ lua << EOF
       }
   }
   require('telescope').load_extension('fzy_native')
+  require('telescope').load_extension('gh')
 EOF
