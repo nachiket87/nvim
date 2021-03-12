@@ -25,8 +25,6 @@ set noshowmode
 let loaded_matchparen = 1        " Turn off parenthesis match highlighting.
 
 call plug#begin('~/.config/plugged')
-Plug 'neoclide/coc.nvim', {'branch': 'release'}
-let g:coc_global_extensions = ['coc-emmet', 'coc-css', 'coc-html', 'coc-json', 'coc-tsserver', 'coc-eslint', 'coc-solargraph', 'coc-prettier']
 Plug 'gruvbox-community/gruvbox'
 Plug 'scrooloose/nerdtree'
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
@@ -50,15 +48,12 @@ Plug 'nvim-lua/plenary.nvim'
 Plug 'nvim-telescope/telescope.nvim'
 Plug 'nvim-telescope/telescope-fzy-native.nvim'
 Plug 'nvim-telescope/telescope-github.nvim'
+
+Plug 'neovim/nvim-lspconfig'
+Plug 'nvim-lua/completion-nvim'
 call plug#end()
 
-command! -nargs=0 Prettier :CocCommand prettier.formatFile
-inoremap <silent><expr> <C-space> coc#refresh()
 let mapleader = " "
-nmap <silent> gd <Plug>(coc-definition)
-nmap <silent> gy <Plug>(coc-type-definition)
-nmap <silent> gi <Plug>(coc-implementation)
-nmap <silent> gr <Plug>(coc-references)
 nnoremap <leader>h :wincmd h<CR>
 nnoremap <leader>j :wincmd j<CR>
 nnoremap <leader>k :wincmd k<CR>
@@ -68,7 +63,6 @@ nnoremap <leader>b :NERDTreeToggle<CR>
 nnoremap <leader>p :FZF<CR>
 nnoremap <leader>rt :Rg <C-R>=expand("<cword>")<CR><CR>
 nnoremap <leader>r :Rg<SPACE>
-nnoremap <leader>gr :CocSearch 
 nnoremap <leader>1 1gt<CR>
 nnoremap <leader>2 2gt<CR>
 nnoremap <leader>3 3gt<CR>
@@ -115,11 +109,6 @@ function! s:check_back_space() abort
   return !col || getline('.')[col - 1]  =~ '\s'
 endfunction
 
-inoremap <silent><expr> <Tab>
-      \ pumvisible() ? "\<C-n>" :
-      \ <SID>check_back_space() ? "\<Tab>" :
-      \ coc#refresh()
-
 inoremap <silent><expr> <S-Tab> pumvisible() ? "\<C-P>" : "\<C-H>"
 inoremap <expr> <CR> pumvisible() ? "\<C-Y>" : "\<CR>"
 nmap <leader>gs :G<CR>
@@ -164,3 +153,13 @@ lua << EOF
   require('telescope').load_extension('fzy_native')
   require('telescope').load_extension('gh')
 EOF
+
+  "" language servers
+set completeopt=menuone,noinsert,noselect
+let g:completion_matching_strategy_list = ['exact','substring','fuzzy']
+let g:completion_enable_auto_popup = 1
+let g:completion_enable_snippet = 'vim-snippets'
+lua require('lspconfig').tsserver.setup{ on_attach=require'completion'.on_attach }
+
+inoremap <expr> <Tab>   pumvisible() ? "\<C-n>" : "\<Tab>"
+inoremap <expr> <S-Tab> pumvisible() ? "\<C-p>" : "\<S-Tab>"
