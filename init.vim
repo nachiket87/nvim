@@ -49,8 +49,11 @@ Plug 'nvim-telescope/telescope.nvim'
 Plug 'nvim-telescope/telescope-fzy-native.nvim'
 Plug 'nvim-telescope/telescope-github.nvim'
 
+
 Plug 'neovim/nvim-lspconfig'
 Plug 'nvim-lua/completion-nvim'
+Plug 'norcalli/snippets.nvim'
+Plug 'sbdchd/neoformat'
 call plug#end()
 
 let mapleader = " "
@@ -140,32 +143,19 @@ nnoremap <leader>fb <cmd>Telescope buffers<cr>
 command W w
 command Q q
 
-" lua to user FZF no idea if this working
-lua << EOF
-  require('telescope').setup {
-      extensions = {
-          fzy_native = {
-              override_generic_sorter = true,
-              override_file_sorter = true,
-          }
-      }
-  }
-  require('telescope').load_extension('fzy_native')
-  require('telescope').load_extension('gh')
-EOF
-
   "" language servers
 set completeopt=menuone,noinsert,noselect
 let g:completion_matching_strategy_list = ['exact','substring','fuzzy']
 let g:completion_enable_auto_popup = 1
 let g:completion_enable_snippet = 'vim-snippets'
-lua require('lspconfig').tsserver.setup{ on_attach=require'completion'.on_attach }
 
 inoremap <expr> <Tab>   pumvisible() ? "\<C-n>" : "\<Tab>"
 inoremap <expr> <S-Tab> pumvisible() ? "\<C-p>" : "\<S-Tab>"
 
-autocmd BufWritePre *.js lua vim.lsp.buf.formatting_sync(nil, 100)
-autocmd BufWritePre *.ts lua vim.lsp.buf.formatting_sync(nil, 100)
-autocmd BufWritePre *.jsx lua vim.lsp.buf.formatting_sync(nil, 100)
-autocmd BufWritePre *.tsx lua vim.lsp.buf.formatting_sync(nil, 100)
-autocmd BufWritePre *.py lua vim.lsp.buf.formatting_sync(nil, 100)
+autocmd BufWritePre *.js Neoformat
+autocmd BufWritePre *.jsx Neoformat
+autocmd BufWritePre *.tsx Neoformat
+autocmd BufWritePre *.scss Neoformat
+
+lua require('nachiket-custom-lsp')
+lua require('nachiket-telescope')
