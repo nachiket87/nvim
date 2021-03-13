@@ -54,6 +54,7 @@ Plug 'neovim/nvim-lspconfig'
 Plug 'nvim-lua/completion-nvim'
 Plug 'norcalli/snippets.nvim'
 Plug 'sbdchd/neoformat'
+Plug 'lukas-reineke/format.nvim'
 call plug#end()
 
 let mapleader = " "
@@ -133,11 +134,11 @@ syntax enable
 filetype plugin indent on
 
 " telescope to see the sun
-
   
 nnoremap <leader>ff <cmd>Telescope find_files<cr> 
 nnoremap <leader>fg :lua require('telescope.builtin').grep_string({ search = vim.fn.input("Grep For > ")})<CR>
 nnoremap <leader>fb <cmd>Telescope buffers<cr>
+nnoremap <leader>fe :lua vim.lsp.buf.code_action() <CR>
 
 " map :W to w and :Q to q
 command W w
@@ -147,15 +148,17 @@ command Q q
 set completeopt=menuone,noinsert,noselect
 let g:completion_matching_strategy_list = ['exact','substring','fuzzy']
 let g:completion_enable_auto_popup = 1
-let g:completion_enable_snippet = 'vim-snippets'
 
 inoremap <expr> <Tab>   pumvisible() ? "\<C-n>" : "\<Tab>"
 inoremap <expr> <S-Tab> pumvisible() ? "\<C-p>" : "\<S-Tab>"
 
-autocmd BufWritePre *.js Neoformat
-autocmd BufWritePre *.jsx Neoformat
-autocmd BufWritePre *.tsx Neoformat
-autocmd BufWritePre *.scss Neoformat
+augroup Format
+    autocmd!
+    autocmd BufWritePost * FormatWrite
+augroup END
+
+autocmd BufEnter * lua require'completion'.on_attach()
 
 lua require('nachiket-custom-lsp')
 lua require('nachiket-telescope')
+lua require('nachiket-formatter')
