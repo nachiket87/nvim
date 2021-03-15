@@ -29,5 +29,8 @@ require("format").setup {
             end_pattern = "^```$",
             target = "current"
         }
-    }
+    },
+    ruby = {
+        {cmd = {"rubocop -a"}}
+    },
 }

@@ -8,5 +8,4 @@ require('telescope').setup {
 }
 require('telescope').load_extension('fzy_native')
 require('telescope').load_extension('gh')
-require('lspconfig').tsserver.setup{ on_attach=require'completion'.on_attach }
-
+require('lspconfig').tsserver.setup{ on_attach=require'compe'.on_attach }
