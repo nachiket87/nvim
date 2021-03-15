@@ -43,8 +43,6 @@
       ]], false)
     end
   end
-  -- snippet support
-
   -- Use a loop to conveniently both setup defined servers 
   -- and map buffer local keybindings when the language server attaches
 

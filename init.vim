@@ -51,11 +51,8 @@ Plug 'nvim-telescope/telescope-github.nvim'
 
 
 Plug 'neovim/nvim-lspconfig'
-Plug 'nvim-lua/completion-nvim'
-Plug 'sbdchd/neoformat'
 Plug 'lukas-reineke/format.nvim'
 Plug 'hrsh7th/nvim-compe'
-Plug 'hrsh7th/vim-vsnip'
 call plug#end()
 
 let mapleader = " "
