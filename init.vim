@@ -26,7 +26,7 @@ let loaded_matchparen = 1        " Turn off parenthesis match highlighting.
 
 call plug#begin('~/.config/plugged')
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
-let g:coc_global_extensions = ['coc-emmet', 'coc-css', 'coc-html', 'coc-json', 'coc-tsserver', 'coc-eslint', 'coc-solargraph', 'coc-prettier']
+let g:coc_global_extensions = ['coc-emmet', 'coc-css', 'coc-html', 'coc-json', 'coc-tsserver', 'coc-eslint', 'coc-prettier', 'coc-solargraph']
 Plug 'gruvbox-community/gruvbox'
 Plug 'scrooloose/nerdtree'
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
@@ -50,6 +50,7 @@ Plug 'nvim-lua/plenary.nvim'
 Plug 'nvim-telescope/telescope.nvim'
 Plug 'nvim-telescope/telescope-fzy-native.nvim'
 Plug 'nvim-telescope/telescope-github.nvim'
+Plug 'junegunn/vim-peekaboo'
 call plug#end()
 
 command! -nargs=0 Prettier :CocCommand prettier.formatFile
@@ -69,6 +70,7 @@ nnoremap <leader>p :FZF<CR>
 nnoremap <leader>rt :Rg <C-R>=expand("<cword>")<CR><CR>
 nnoremap <leader>r :Rg<SPACE>
 nnoremap <leader>gr :CocSearch 
+nnoremap <leader>fe :CocFix<CR>
 nnoremap <leader>1 1gt<CR>
 nnoremap <leader>2 2gt<CR>
 nnoremap <leader>3 3gt<CR>
@@ -125,6 +127,8 @@ inoremap <expr> <CR> pumvisible() ? "\<C-Y>" : "\<CR>"
 nmap <leader>gs :G<CR>
 nmap <leader>gl :diffget //3<CR>
 nmap <leader>ga :diffget //2<CR>
+nmap <leader>gcf :G checkout %<CR>
+nmap <leader>gcc :G branch<CR>
 
 highlight Normal ctermbg=none
 highlight NonText ctermbg=none
@@ -141,7 +145,6 @@ syntax enable
 filetype plugin indent on
 
 " telescope to see the sun
-
   
 nnoremap <leader>ff <cmd>Telescope find_files<cr> 
 nnoremap <leader>fg :lua require('telescope.builtin').grep_string({ search = vim.fn.input("Grep For > ")})<CR>
