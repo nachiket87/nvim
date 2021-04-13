@@ -1,8 +1,8 @@
 set noshowmatch
 syntax on
 set formatoptions-=cro
-set notermguicolors
 set ma
+set termguicolors
 set nohlsearch
 set hidden
 set noerrorbells
@@ -28,6 +28,7 @@ call plug#begin('~/.config/plugged')
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 let g:coc_global_extensions = ['coc-emmet', 'coc-css', 'coc-html', 'coc-json', 'coc-tsserver', 'coc-eslint', 'coc-prettier', 'coc-solargraph']
 Plug 'gruvbox-community/gruvbox'
+Plug 'dracula/vim', { 'as': 'dracula' }
 Plug 'scrooloose/nerdtree'
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'junegunn/fzf.vim'
@@ -51,6 +52,7 @@ Plug 'nvim-telescope/telescope.nvim'
 Plug 'nvim-telescope/telescope-fzy-native.nvim'
 Plug 'nvim-telescope/telescope-github.nvim'
 Plug 'junegunn/vim-peekaboo'
+Plug 'norcalli/nvim-colorizer.lua'
 call plug#end()
 
 command! -nargs=0 Prettier :CocCommand prettier.formatFile
@@ -76,10 +78,15 @@ nnoremap <leader>2 2gt<CR>
 nnoremap <leader>3 3gt<CR>
 nnoremap <leader>4 4gt<CR>
 nnoremap <leader>5 5gt<CR>
+nnoremap <leader>6 6gt<CR>
+nnoremap <leader>7 7gt<CR>
+
 nnoremap <leader>v :vsplit<CR>
 nnoremap <leader>+ :vertical resize +5<CR>
+
 nnoremap <Leader><CR> :e ~/.config/nvim/init.vim<CR>
 nnoremap <leader>gb :Buffers<CR>
+
 command! -bang -nargs=* Rg
   \ call fzf#vim#grep(
   \   'rg --column --line-number --no-heading --color=always --smart-case -- '.shellescape(<q-args>), 1,
@@ -149,6 +156,7 @@ filetype plugin indent on
 nnoremap <leader>ff <cmd>Telescope find_files<cr> 
 nnoremap <leader>fg :lua require('telescope.builtin').grep_string({ search = vim.fn.input("Grep For > ")})<CR>
 nnoremap <leader>fb <cmd>Telescope buffers<cr>
+nnoremap <leader>ft <cmd>:!standardrb % --fix<cr>
 
 " map :W to w and :Q to q
 command W w
@@ -166,4 +174,5 @@ lua << EOF
   }
   require('telescope').load_extension('fzy_native')
   require('telescope').load_extension('gh')
+  require('colorizer').setup()
 EOF
