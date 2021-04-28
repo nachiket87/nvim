@@ -24,6 +24,15 @@ set scrolloff=8
 set noshowmode
 let loaded_matchparen = 1        " Turn off parenthesis match highlighting.
 
+" ===== Instead of backing up files, just reload the buffer when it changes. =====
+" The buffer is an in-memory representation of a file, it's what you edit
+set autoread                         " Auto-reload buffers when file changed on disk
+set nobackup                         " Don't use backup files
+set nowritebackup                    " Don't backup the file while editing
+set noswapfile                       " Don't create swapfiles for new buffers
+set updatecount=0                    " Don't try to write swapfiles after some number of updates
+set backupskip=/tmp/*,/private/tmp/* " Let me edit crontab files
+
 call plug#begin('~/.config/plugged')
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 let g:coc_global_extensions = ['coc-emmet', 'coc-css', 'coc-html', 'coc-json', 'coc-tsserver', 'coc-eslint', 'coc-prettier', 'coc-solargraph']
@@ -53,6 +62,7 @@ Plug 'nvim-telescope/telescope-fzy-native.nvim'
 Plug 'nvim-telescope/telescope-github.nvim'
 Plug 'junegunn/vim-peekaboo'
 Plug 'norcalli/nvim-colorizer.lua'
+Plug 'vimwiki/vimwiki'
 call plug#end()
 
 command! -nargs=0 Prettier :CocCommand prettier.formatFile
