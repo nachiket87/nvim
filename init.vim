@@ -8,7 +8,7 @@ set hidden
 set noerrorbells
 set tabstop=2 softtabstop=2
 set shiftwidth=2
-set updatetime=4000
+set updatetime=300
 set expandtab
 set smartindent
 set nu
@@ -22,6 +22,7 @@ set undofile
 set incsearch
 set scrolloff=8
 set noshowmode
+set rtp+=/usr/local/opt/fzf
 let loaded_matchparen = 1        " Turn off parenthesis match highlighting.
 
 " ===== Instead of backing up files, just reload the buffer when it changes. =====
@@ -62,7 +63,6 @@ Plug 'nvim-telescope/telescope-fzy-native.nvim'
 Plug 'nvim-telescope/telescope-github.nvim'
 Plug 'junegunn/vim-peekaboo'
 Plug 'norcalli/nvim-colorizer.lua'
-Plug 'vimwiki/vimwiki'
 call plug#end()
 
 command! -nargs=0 Prettier :CocCommand prettier.formatFile
@@ -164,7 +164,7 @@ filetype plugin indent on
 " telescope to see the sun
   
 nnoremap <leader>ff <cmd>Telescope find_files<cr>
-nnoremap <leader>fg :lua require('telescope.builtin').grep_string({ search = vim.fn.input("Grep For > ")})<CR>
+nnoremap <leader>fg :lua require('telescope.builtin').grep_string({ search = vim.fn.input("Grep For > ")})<cr>
 nnoremap <leader>fb <cmd>Telescope buffers<cr>
 nnoremap <leader>ft <cmd>:!standardrb % --fix<cr>
 
