@@ -17,8 +17,6 @@ set nowrap
 set smartcase
 set noswapfile
 set nobackup
-set undodir=~/.vim/undodir
-set undofile
 set incsearch
 set scrolloff=8
 set noshowmode
@@ -73,7 +71,6 @@ let g:fzf_action = {
 "let g:python3_host_prog = '/usr/local/Cellar/python@3.9/3.9.1_6/bin/python3'
 " uncommnet below and comment above if you can't find python path.
 let g:loaded_python_provider = 0
-
 let g:airline_powerline_fonts = 1
 
 "enables cursor changing below
