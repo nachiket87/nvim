@@ -27,4 +27,5 @@ call plug#begin('~/.config/plugged')
   Plug 'junegunn/vim-peekaboo'
   Plug 'norcalli/nvim-colorizer.lua'
   Plug 'kyazdani42/nvim-web-devicons'
+  Plug 'nvim-treesitter/nvim-treesitter', { 'do': ':TSUpdate' }
 call plug#end()
