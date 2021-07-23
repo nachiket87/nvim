@@ -1,5 +1,5 @@
 set noshowmatch
-syntax on
+syntax off
 set lazyredraw
 set formatoptions-=cro
 set ma
@@ -45,10 +45,6 @@ runtime ./plug.vim
 runtime ./maps.vim
 
 let g:coc_global_extensions = ['coc-emmet', 'coc-css', 'coc-html', 'coc-json', 'coc-tsserver', 'coc-eslint', 'coc-prettier', 'coc-solargraph']
-
-highlight Visual cterm=NONE ctermbg=236 ctermfg=NONE guibg=Grey40
-highlight LineNr cterm=none ctermfg=240 guifg=#2b506e guibg=#000000
-
 
 command! -nargs=0 Prettier :CocCommand prettier.formatFile
 command! -bang -nargs=* Rg

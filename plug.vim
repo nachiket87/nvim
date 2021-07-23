@@ -1,7 +1,6 @@
 call plug#begin('~/.config/plugged')
   Plug 'neoclide/coc.nvim', {'branch': 'release'}
   Plug 'gruvbox-community/gruvbox'
-  Plug 'dracula/vim', { 'as': 'dracula' }
   Plug 'scrooloose/nerdtree'
   Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
   Plug 'junegunn/fzf.vim'
@@ -18,7 +17,6 @@ call plug#begin('~/.config/plugged')
   Plug 'peitalin/vim-jsx-typescript'
   Plug 'jparise/vim-graphql'
   Plug 'honza/vim-snippets'
-  Plug 'ryanoasis/vim-devicons'
   Plug 'nvim-lua/popup.nvim'
   Plug 'nvim-lua/plenary.nvim'
   Plug 'nvim-telescope/telescope.nvim'
@@ -27,5 +25,7 @@ call plug#begin('~/.config/plugged')
   Plug 'junegunn/vim-peekaboo'
   Plug 'norcalli/nvim-colorizer.lua'
   Plug 'kyazdani42/nvim-web-devicons'
+  Plug 'ryanoasis/vim-devicons'
   Plug 'nvim-treesitter/nvim-treesitter', { 'do': ':TSUpdate' }
+  Plug 'dracula/vim', { 'as': 'dracula' }
 call plug#end()
