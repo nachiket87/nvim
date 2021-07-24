@@ -6,6 +6,7 @@ call plug#begin('~/.config/plugged')
 
   "these are the old ones
   Plug 'tpope/vim-surround'
+  Plug 'tpope/vim-fugitive'
   Plug 'gruvbox-community/gruvbox'
   Plug 'nvim-lua/popup.nvim'
   Plug 'nvim-lua/plenary.nvim'

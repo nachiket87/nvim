@@ -59,8 +59,4 @@ colorscheme gruvbox
 
 lua << EOF
   require('colorizer').setup()
-  require('lualine').setup {
-    options = { theme = 'gruvbox', },
-    }
-
 EOF
