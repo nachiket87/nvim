@@ -1,5 +1,5 @@
 set noshowmatch
-syntax off
+syntax on
 set lazyredraw
 set formatoptions-=cro
 set ma
@@ -24,7 +24,6 @@ set rtp+=/usr/local/opt/fzf
 let loaded_matchparen = 1        " Turn off parenthesis match highlighting.
 
 if exists("&termguicolors") && exists("&winblend")
-  syntax enable
   set termguicolors
   set winblend=0
   set wildoptions=pum
@@ -44,25 +43,6 @@ set backupskip=/tmp/*,/private/tmp/* " Let me edit crontab files
 runtime ./plug.vim
 runtime ./maps.vim
 
-let g:coc_global_extensions = ['coc-emmet', 'coc-css', 'coc-html', 'coc-json', 'coc-tsserver', 'coc-eslint', 'coc-prettier', 'coc-solargraph']
-
-command! -nargs=0 Prettier :CocCommand prettier.formatFile
-command! -bang -nargs=* Rg
-  \ call fzf#vim#grep(
-  \   'rg --column --line-number --no-heading --color=always --smart-case -- '.shellescape(<q-args>), 1,
-  \   fzf#vim#with_preview(), <bang>0)
-let g:fzf_layout = { 'window': { 'width': 0.8, 'height': 0.8 } }
-let $FZF_DEFAULT_OPTS='--reverse'
-
-if executable('rg')
-    let g:rg_derive_root='true'
-endif
-
-let g:fzf_action = {
-  \ 'ctrl-t': 'tab split',
-  \ 'ctrl-s': 'split',
-  \ 'ctrl-v': 'vsplit'
-  \}
 
 "let g:python3_host_prog = '/usr/local/Cellar/python@3.9/3.9.1_6/bin/python3'
 " uncommnet below and comment above if you can't find python path.
@@ -75,22 +55,7 @@ set guicursor=n-v-c:block,i-ci-ve:ver10,r-cr:hor20,o:hor50
 autocmd FileType * setlocal formatoptions-=c formatoptions-=r formatoptions-=o
 hi Normal guibg=NONE ctermbg=NONE
 
-" use <tab> for trigger completion and navigate to the next complete item
-function! s:check_back_space() abort
-  let col = col('.') - 1
-  return !col || getline('.')[col - 1]  =~ '\s'
-endfunction
-
 colorscheme gruvbox
-
-augroup filetype_jsx
-    autocmd!
-    autocmd FileType jsx set filetype=javascript
-augroup END
-
-syntax enable
-
-filetype plugin indent on
 
 lua << EOF
   require('telescope').setup {
@@ -104,4 +69,7 @@ lua << EOF
   require('telescope').load_extension('fzy_native')
   require('telescope').load_extension('gh')
   require('colorizer').setup()
+  require('lualine').setup {
+    options = { theme = 'gruvbox', },
+    }
 EOF
