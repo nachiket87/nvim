@@ -5,6 +5,7 @@ call plug#begin('~/.config/plugged')
   Plug 'hoob3rt/lualine.nvim'
 
   "these are the old ones
+  Plug 'tpope/vim-surround'
   Plug 'gruvbox-community/gruvbox'
   Plug 'nvim-lua/popup.nvim'
   Plug 'nvim-lua/plenary.nvim'
