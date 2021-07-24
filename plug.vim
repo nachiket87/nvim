@@ -4,8 +4,7 @@ call plug#begin('~/.config/plugged')
   Plug 'glepnir/lspsaga.nvim'
   Plug 'hoob3rt/lualine.nvim'
   Plug 'kyazdani42/nvim-tree.lua'
-  Plug 'SirVer/ultisnips'
-  Plug 'SirVer/ultisnips'
+  Plug 'norcalli/snippets.nvim'
 
   "these are the old ones
   Plug 'airblade/vim-gitgutter'

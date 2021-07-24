@@ -46,6 +46,7 @@ runtime ./maps.vim
 "let g:python3_host_prog = '/usr/local/Cellar/python@3.9/3.9.1_6/bin/python3'
 " uncommet below and comment above if you can't find python path.
 let g:loaded_python_provider = 0
+let g:completion_enable_snippet = 'snippets.nvim'
 
 "enables cursor changing below
 set guicursor=n-v-c:block,i-ci-ve:ver10,r-cr:hor20,o:hor50

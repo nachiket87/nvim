@@ -18,7 +18,6 @@ require'nvim-treesitter.configs'.setup {
     "toml",
     "json",
     "yaml",
-    "swift",
     "html",
     "scss",
     "ruby"

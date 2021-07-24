@@ -16,7 +16,6 @@ nnoremap <leader>7 7gt<CR>
 nnoremap <leader>8 8gt<CR>
 nnoremap <leader>- :vertical resize -5<CR>
 nnoremap <leader>+ :vertical resize +5<CR>
-"--
 
 " Git Fugitive 
 
@@ -26,34 +25,9 @@ nmap <leader>ga :diffget //2<CR>
 nmap <leader>gcf :G checkout %<CR>
 nmap <leader>gcc :G branch<CR>
 
-"--
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+"Telescope
 nnoremap <leader>ff <cmd>Telescope find_files<cr>
+nnoremap <leader>p <cmd>Telescope find_files<cr>
 nnoremap <leader>fg :lua require('telescope.builtin').grep_string({ search = vim.fn.input("Grep For > ")})<cr>
 nnoremap <leader>fb <cmd>Telescope buffers<cr>
 

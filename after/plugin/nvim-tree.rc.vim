@@ -27,7 +27,6 @@ let g:nvim_tree_icons = {
     \     'error': "",
     \   }
     \ }
-let g:nvim_tree_auto_open = 1
 let g:nvim_tree_ignore = [ '.git', 'node_modules', '.cache', '.vscode', '.github', '.sass-cache' ]
 nnoremap <leader>b :NvimTreeToggle<CR>
 nnoremap <leader>r :NvimTreeRefresh<CR>
