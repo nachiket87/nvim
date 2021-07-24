@@ -1,6 +1,5 @@
 set noshowmatch
 syntax off
-set lazyredraw
 set formatoptions-=cro
 set ma
 set nohlsearch
