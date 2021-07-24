@@ -1,5 +1,5 @@
 set noshowmatch
-syntax on
+syntax off
 set lazyredraw
 set formatoptions-=cro
 set ma
@@ -43,11 +43,9 @@ set backupskip=/tmp/*,/private/tmp/* " Let me edit crontab files
 runtime ./plug.vim
 runtime ./maps.vim
 
-
 "let g:python3_host_prog = '/usr/local/Cellar/python@3.9/3.9.1_6/bin/python3'
-" uncommnet below and comment above if you can't find python path.
+" uncommet below and comment above if you can't find python path.
 let g:loaded_python_provider = 0
-let g:airline_powerline_fonts = 1
 
 "enables cursor changing below
 set guicursor=n-v-c:block,i-ci-ve:ver10,r-cr:hor20,o:hor50
@@ -60,3 +58,4 @@ colorscheme gruvbox
 lua << EOF
   require('colorizer').setup()
 EOF
+

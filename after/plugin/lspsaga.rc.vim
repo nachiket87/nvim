@@ -11,3 +11,4 @@ lua << EOF
 EOF
 nnoremap <silent><leader>K :Lspsaga hover_doc<CR>
 nnoremap <silent><leader>ca <cmd>lua require('lspsaga.codeaction').code_action()<CR>
+nnoremap <silent><leader>gr <cmd>lua require('lspsaga.rename').rename()<CR>

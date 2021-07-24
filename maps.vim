@@ -14,6 +14,8 @@ nnoremap <leader>5 5gt<CR>
 nnoremap <leader>6 6gt<CR>
 nnoremap <leader>7 7gt<CR>
 nnoremap <leader>8 8gt<CR>
+nnoremap <leader>- :vertical resize -5<CR>
+nnoremap <leader>+ :vertical resize +5<CR>
 "--
 
 " Git Fugitive 

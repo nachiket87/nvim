@@ -3,10 +3,15 @@ call plug#begin('~/.config/plugged')
   Plug 'nvim-lua/completion-nvim'
   Plug 'glepnir/lspsaga.nvim'
   Plug 'hoob3rt/lualine.nvim'
+  Plug 'kyazdani42/nvim-tree.lua'
+  Plug 'SirVer/ultisnips'
+  Plug 'SirVer/ultisnips'
 
   "these are the old ones
+  Plug 'airblade/vim-gitgutter'
   Plug 'tpope/vim-surround'
   Plug 'tpope/vim-fugitive'
+  Plug 'tpope/vim-rails'
   Plug 'gruvbox-community/gruvbox'
   Plug 'nvim-lua/popup.nvim'
   Plug 'nvim-lua/plenary.nvim'
@@ -16,4 +21,5 @@ call plug#begin('~/.config/plugged')
   Plug 'norcalli/nvim-colorizer.lua'
   Plug 'kyazdani42/nvim-web-devicons'
   Plug 'nvim-treesitter/nvim-treesitter', { 'do': ':TSUpdate' }
+  Plug 'honza/vim-snippets'
 call plug#end()
