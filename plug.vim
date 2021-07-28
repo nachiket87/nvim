@@ -1,10 +1,11 @@
 call plug#begin('~/.config/plugged')
   Plug 'neovim/nvim-lspconfig'
-  Plug 'nvim-lua/completion-nvim'
+  "Plug 'nvim-lua/completion-nvim'
   Plug 'glepnir/lspsaga.nvim'
   Plug 'hoob3rt/lualine.nvim'
   Plug 'kyazdani42/nvim-tree.lua'
   Plug 'norcalli/snippets.nvim'
+  Plug 'hrsh7th/nvim-compe'
 
   "these are the old ones
   Plug 'airblade/vim-gitgutter'
