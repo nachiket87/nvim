@@ -17,6 +17,7 @@ call plug#begin('~/.config/plugged')
   Plug 'nvim-lua/plenary.nvim'
   Plug 'nvim-telescope/telescope.nvim'
   Plug 'nvim-telescope/telescope-fzy-native.nvim'
+  Plug 'tpope/vim-rhubarb'
   Plug 'nvim-telescope/telescope-github.nvim'
   Plug 'norcalli/nvim-colorizer.lua'
   Plug 'kyazdani42/nvim-web-devicons'

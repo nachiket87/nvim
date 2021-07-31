@@ -27,9 +27,23 @@ nmap <leader>gcc :G branch<CR>
 
 "Telescope
 nnoremap <leader>ff <cmd>Telescope find_files<cr>
-nnoremap <leader>p <cmd>Telescope find_files<cr>
+nnoremap <leader>p :lua require('telescope.builtin').find_files({ no_ignore = 'hidden'})<cr>
 nnoremap <leader>fg :lua require('telescope.builtin').grep_string({ search = vim.fn.input("Grep For > ")})<cr>
 nnoremap <leader>fb <cmd>Telescope buffers<cr>
 
 command W w
 command Q q
+
+
+"Custom
+
+"'nachiket'
+"count the number of times the current word appears in current buffer
+nnoremap <leader>fd :call Check_Double()<cr>
+
+function! Check_Double()
+  normal! yi'
+  execute '/'.getreg('"')
+endfunction
+
+"'nachiket'"

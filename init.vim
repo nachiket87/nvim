@@ -58,5 +58,7 @@ colorscheme gruvbox
 
 lua << EOF
   require('colorizer').setup()
+  vim.g.nvim_tree_disable_netrw = 0
 EOF
 
+let g:indent_blankline_char = 'x'
