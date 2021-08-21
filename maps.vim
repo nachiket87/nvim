@@ -46,4 +46,8 @@ function! Check_Double()
   execute '/'.getreg('"')
 endfunction
 
+
 "'nachiket'"
+
+" neoformat on save
+autocmd BufWritePost * Neoformat 

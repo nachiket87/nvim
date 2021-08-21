@@ -12,12 +12,12 @@ lua << EOF
   buf_set_keymap('n', '<space>e', '<cmd>lua vim.lsp.diagnostic.show_line_diagnostics()<CR>', opts)
   --...
 
-  if client.resolved_capabilities.document_formatting then
-    vim.api.nvim_command [[augroup Format]]
-    vim.api.nvim_command [[autocmd! * <buffer>]]
-    vim.api.nvim_command [[autocmd BufWritePre <buffer> lua vim.lsp.buf.formatting_seq_sync()]]
-    vim.api.nvim_command [[augroup END]]
-  end
+  --if client.resolved_capabilities.document_formatting then
+   -- vim.api.nvim_command [[augroup Format]]
+    --vim.api.nvim_command [[autocmd! * <buffer>]]
+    --vim.api.nvim_command [[autocmd BufWritePre <buffer> lua vim.lsp.buf.formatting_seq_sync()]]
+    --vim.api.nvim_command [[augroup END]]
+  --end
    protocol.CompletionItemKind = {
     '', -- Text
     '', -- Method
@@ -51,9 +51,11 @@ lua << EOF
   local servers = { "solargraph", "tsserver" }
   for _, lsp in ipairs(servers) do
   nvim_lsp[lsp].setup {
-    on_attach = on_attach,
+    on_attach = function(client, bufnr)
+        client.resolved_capabilities.document_formatting = false
+        on_attach(client)
+    end,
     flags = { debounce_text_changes = 150, }
     }
   end
-
 EOF

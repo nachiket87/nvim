@@ -62,3 +62,8 @@ lua << EOF
 EOF
 
 let g:indent_blankline_char = 'x'
+
+let g:neoformat_enable_typescript = ['prettier']
+let g:neoformat_enable_ruby = ['rubocop']
+let g:neoformat_enable_scss = ['prettier']
+let g:neoformat_only_msg_on_error = 1

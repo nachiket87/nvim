@@ -6,6 +6,8 @@ call plug#begin('~/.config/plugged')
   Plug 'kyazdani42/nvim-tree.lua'
   Plug 'norcalli/snippets.nvim'
   Plug 'hrsh7th/nvim-compe'
+  Plug 'glepnir/zephyr-nvim'
+  Plug 'sbdchd/neoformat'
 
   "these are the old ones
   Plug 'airblade/vim-gitgutter'
