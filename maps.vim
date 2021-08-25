@@ -50,4 +50,4 @@ endfunction
 "'nachiket'"
 
 " neoformat on save
-autocmd BufWritePost * Neoformat 
+autocmd BufWritePost * if &ft != 'ruby' | Neoformat | endif
