@@ -22,6 +22,9 @@ require'nvim-treesitter.configs'.setup {
     "scss",
     "ruby"
   },
+  matchup = {
+    enable = true,              -- mandatory, false will disable the whole extension
+  },
 }
 
 local parser_config = require "nvim-treesitter.parsers".get_parser_configs()

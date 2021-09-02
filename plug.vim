@@ -8,6 +8,8 @@ call plug#begin('~/.config/plugged')
   Plug 'hrsh7th/nvim-compe'
   Plug 'glepnir/zephyr-nvim'
   Plug 'sbdchd/neoformat'
+  Plug 'andymass/vim-matchup'
+  Plug 'sainnhe/gruvbox-material'
 
   "these are the old ones
   Plug 'airblade/vim-gitgutter'

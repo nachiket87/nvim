@@ -65,6 +65,11 @@ let g:indent_blankline_char = 'x'
 
 let g:neoformat_enable_typescript = ['prettier']
 let g:neoformat_enable_javascript = ['prettier']
-let g:neoformat_enable_ruby = ['rubocop']
+let g:neoformat_enable_ruby = ['prettier']
 let g:neoformat_enable_scss = ['prettier']
 let g:neoformat_only_msg_on_error = 1
+
+augroup filetype_javascript
+    autocmd!
+    autocmd FileType javascript set filetype=javascriptreact
+augroup END
