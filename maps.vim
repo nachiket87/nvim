@@ -24,6 +24,7 @@ nmap <leader>gl :diffget //3<CR>
 nmap <leader>ga :diffget //2<CR>
 nmap <leader>gcf :G checkout %<CR>
 nmap <leader>gcc :G branch<CR>
+nmap <leader>gu :GitGutterUndoHunk<CR>
 
 "Telescope
 nnoremap <leader>ff <cmd>Telescope find_files<cr>
