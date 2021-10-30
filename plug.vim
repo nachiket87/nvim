@@ -4,7 +4,7 @@ call plug#begin('~/.config/plugged')
   Plug 'scrooloose/nerdtree'
   Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
   Plug 'junegunn/fzf.vim'
-  Plug 'vim-airline/vim-airline'
+  Plug 'hoob3rt/lualine.nvim'
   Plug 'vim-airline/vim-airline-themes'
   Plug 'tpope/vim-fugitive'
   Plug 'tpope/vim-rhubarb'
@@ -22,4 +22,5 @@ call plug#begin('~/.config/plugged')
   Plug 'kyazdani42/nvim-web-devicons'
   Plug 'ryanoasis/vim-devicons'
   Plug 'nvim-treesitter/nvim-treesitter', { 'do': ':TSUpdate' }
+  Plug 'andymass/vim-matchup'
 call plug#end()

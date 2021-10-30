@@ -1,1 +1,7 @@
 .netrwhist
+*.ts
+*.json
+*.js
+*.rb
+test.*
+

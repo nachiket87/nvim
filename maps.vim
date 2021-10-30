@@ -41,10 +41,21 @@ nmap <leader>gl :diffget //3<CR>
 nmap <leader>ga :diffget //2<CR>
 nmap <leader>gcf :G checkout %<CR>
 nmap <leader>gcc :G branch<CR>
+nmap <leader>gu :GitGutterUndoHunk<CR>
+
+"Telescope
 nnoremap <leader>ff <cmd>Telescope find_files<cr>
 nnoremap <leader>fg :lua require('telescope.builtin').grep_string({ search = vim.fn.input("Grep For > ")})<cr>
 nnoremap <leader>fb <cmd>Telescope buffers<cr>
-nnoremap <leader>ft <cmd>:!standardrb % --fix<cr>
+
+"NerdTree
+
+nnoremap <leader>b :NERDTreeToggle<CR>
+nnoremap <leader>n :NERDTreeFind<CR>
 
 command W w
 command Q q
+
+"copy file path to clipboard
+
+nnoremap <leader>fp :let @* = expand("%")<CR>

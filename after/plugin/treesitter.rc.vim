@@ -16,14 +16,14 @@ require'nvim-treesitter.configs'.setup {
   ensure_installed = {
     "tsx",
     "toml",
-    "fish",
-    "php",
     "json",
     "yaml",
-    "swift",
     "html",
     "scss",
     "ruby"
+  },
+  matchup = {
+    enable = true,              -- mandatory, false will disable the whole extension
   },
 }
 
