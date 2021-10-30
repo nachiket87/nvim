@@ -21,13 +21,9 @@ let g:nvim_tree_icons = {
     \   'symlink_open': "",
     \   },
     \   'lsp': {
-    \     'hint': "",
     \     'info': "",
     \     'warning': "",
     \     'error': "",
     \   }
     \ }
 let g:nvim_tree_ignore = [ '.git', 'node_modules', '.cache', '.vscode', '.github', '.sass-cache' ]
-nnoremap <leader>b :NvimTreeToggle<CR>
-nnoremap <leader>r :NvimTreeRefresh<CR>
-nnoremap <leader>n :NvimTreeFindFile<CR>

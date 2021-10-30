@@ -71,5 +71,5 @@ let g:neoformat_only_msg_on_error = 1
 
 augroup filetype_javascript
     autocmd!
-    autocmd FileType javascript set filetype=javascriptreact
+    autocmd FileType javascript set filetype=javascript
 augroup END

@@ -3,7 +3,6 @@ call plug#begin('~/.config/plugged')
   "Plug 'nvim-lua/completion-nvim'
   Plug 'glepnir/lspsaga.nvim'
   Plug 'hoob3rt/lualine.nvim'
-  Plug 'kyazdani42/nvim-tree.lua'
   Plug 'norcalli/snippets.nvim'
   Plug 'hrsh7th/nvim-compe'
   Plug 'glepnir/zephyr-nvim'
@@ -27,4 +26,6 @@ call plug#begin('~/.config/plugged')
   Plug 'kyazdani42/nvim-web-devicons'
   Plug 'nvim-treesitter/nvim-treesitter', { 'do': ':TSUpdate' }
   Plug 'honza/vim-snippets'
+  Plug 'preservim/nerdtree'
+  Plug 'altercation/vim-colors-solarized'
 call plug#end()

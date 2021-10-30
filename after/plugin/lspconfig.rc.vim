@@ -48,7 +48,7 @@ lua << EOF
 
   end
   -- Language Servers
-  local servers = { "solargraph", "tsserver" }
+  local servers = { "tsserver" }
   for _, lsp in ipairs(servers) do
   nvim_lsp[lsp].setup {
     on_attach = function(client, bufnr)

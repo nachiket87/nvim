@@ -32,6 +32,12 @@ nnoremap <leader>p :lua require('telescope.builtin').find_files({ no_ignore = 'h
 nnoremap <leader>fg :lua require('telescope.builtin').grep_string({ search = vim.fn.input("Grep For > ")})<cr>
 nnoremap <leader>fb <cmd>Telescope buffers<cr>
 
+"NerdTree
+
+
+nnoremap <leader>b :NERDTreeToggle<CR>
+nnoremap <leader>n :NERDTreeFind<CR>
+
 command W w
 command Q q
 
@@ -52,3 +58,7 @@ endfunction
 
 " neoformat on save
 autocmd BufWritePost * if &ft != 'ruby' | Neoformat | endif
+
+"copy file path to clipboard
+
+nnoremap <leader>fp :let @* = expand("%")<CR>
