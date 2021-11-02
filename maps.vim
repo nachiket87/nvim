@@ -10,7 +10,6 @@ nnoremap <leader>j :wincmd j<CR>
 nnoremap <leader>k :wincmd k<CR>
 nnoremap <leader>l :wincmd l<CR>
 nnoremap <leader>q :q<CR>
-nnoremap <leader>b :NERDTreeToggle<CR>
 nnoremap <leader>p :FZF<CR>
 nnoremap <leader>rt :Rg <C-R>=expand("<cword>")<CR><CR>
 nnoremap <leader>r :Rg<SPACE>
@@ -50,8 +49,10 @@ nnoremap <leader>fb <cmd>Telescope buffers<cr>
 
 "NerdTree
 
-nnoremap <leader>b :NERDTreeToggle<CR>
-nnoremap <leader>n :NERDTreeFind<CR>
+
+nnoremap <leader>ca :CocAction<CR>
+
+
 
 command W w
 command Q q

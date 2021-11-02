@@ -1,10 +1,9 @@
 call plug#begin('~/.config/plugged')
   Plug 'neoclide/coc.nvim', {'branch': 'release'}
   Plug 'gruvbox-community/gruvbox'
-  Plug 'scrooloose/nerdtree'
   Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
   Plug 'junegunn/fzf.vim'
-  Plug 'hoob3rt/lualine.nvim'
+  Plug 'nvim-lualine/lualine.nvim'
   Plug 'vim-airline/vim-airline-themes'
   Plug 'tpope/vim-fugitive'
   Plug 'tpope/vim-rhubarb'
@@ -20,7 +19,11 @@ call plug#begin('~/.config/plugged')
   Plug 'nvim-telescope/telescope-github.nvim'
   Plug 'norcalli/nvim-colorizer.lua'
   Plug 'kyazdani42/nvim-web-devicons'
+  Plug 'kyazdani42/nvim-tree.lua'
   Plug 'ryanoasis/vim-devicons'
   Plug 'nvim-treesitter/nvim-treesitter', { 'do': ':TSUpdate' }
   Plug 'andymass/vim-matchup'
+
+  "exprimental
+  Plug 'github/copilot.vim'
 call plug#end()
