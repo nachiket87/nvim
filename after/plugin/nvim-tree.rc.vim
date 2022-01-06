@@ -40,7 +40,6 @@ lua << EOF
     update_cwd          = false,
     update_to_buf_dir   = {
       enable = true,
-      auto_open = true,
     },
     diagnostics = {
       enable = false,
@@ -69,7 +68,7 @@ lua << EOF
       height = 30,
       hide_root_folder = false,
       side = 'left',
-      auto_resize = false,
+      auto_resize = true,
       mappings = {
         custom_only = false,
         list = {}

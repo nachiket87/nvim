@@ -24,6 +24,4 @@ call plug#begin('~/.config/plugged')
   Plug 'nvim-treesitter/nvim-treesitter', { 'do': ':TSUpdate' }
   Plug 'andymass/vim-matchup'
 
-  "exprimental
-  Plug 'github/copilot.vim'
 call plug#end()
