@@ -1,5 +1,5 @@
-inoremap <silent><expr> <C-space> coc#refresh()
 let mapleader = " "
+inoremap <silent><expr> <C-space> coc#refresh()
 nmap <silent> gd <Plug>(coc-definition)
 nmap <silent> gy <Plug>(coc-type-definition)
 nmap <silent> gi <Plug>(coc-implementation)
@@ -49,10 +49,7 @@ nnoremap <leader>fb <cmd>Telescope buffers<cr>
 
 "NerdTree
 
-
 nnoremap <leader>ca :CocAction<CR>
-
-
 
 command W w
 command Q q

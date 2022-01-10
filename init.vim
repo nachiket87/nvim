@@ -1,5 +1,5 @@
 set noshowmatch
-syntax off
+syntax enable
 set formatoptions-=cro
 set ma
 set nohlsearch
@@ -87,7 +87,6 @@ augroup filetype_jsx
     autocmd FileType jsx set filetype=javascript
 augroup END
 
-syntax enable
 
 filetype plugin indent on
 
