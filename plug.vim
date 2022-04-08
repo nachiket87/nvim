@@ -1,5 +1,5 @@
 call plug#begin('~/.config/plugged')
-  Plug 'neoclide/coc.nvim', {'branch': 'release'}
+  Plug 'neoclide/coc.nvim', {'branch': 'release', 'do': ':CocUpdate'}
   Plug 'gruvbox-community/gruvbox'
   Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
   Plug 'junegunn/fzf.vim'
