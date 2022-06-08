@@ -5,7 +5,6 @@ nmap <silent> gy <Plug>(coc-type-definition)
 nmap <silent> gi <Plug>(coc-implementation)
 nmap <silent> gr <Plug>(coc-references)
 nnoremap <leader>h :wincmd h<CR>
-nnoremap <leader>gt :NERDTreeFind %<CR>
 nnoremap <leader>j :wincmd j<CR>
 nnoremap <leader>k :wincmd k<CR>
 nnoremap <leader>l :wincmd l<CR>
@@ -57,3 +56,8 @@ command Q q
 "copy file path to clipboard
 
 nnoremap <leader>fp :let @* = expand("%")<CR>
+
+"Rspec tests
+nmap <silent> <leader>t :TestFile<CR>
+nmap <silent> <leader>gt :TestVisit<CR>
+nmap <silent> <leader>T :TestFile<CR>

@@ -23,5 +23,6 @@ call plug#begin('~/.config/plugged')
   Plug 'ryanoasis/vim-devicons'
   Plug 'nvim-treesitter/nvim-treesitter', { 'do': ':TSUpdate' }
   Plug 'andymass/vim-matchup'
+  Plug 'vim-test/vim-test'
 
 call plug#end()
