@@ -74,12 +74,6 @@ set guicursor=n-v-c:block,i-ci-ve:ver10,r-cr:hor20,o:hor50
 autocmd FileType * setlocal formatoptions-=c formatoptions-=r formatoptions-=o
 hi Normal guibg=NONE ctermbg=NONE
 
-" use <tab> for trigger completion and navigate to the next complete item
-function! s:check_back_space() abort
-  let col = col('.') - 1
-  return !col || getline('.')[col - 1]  =~ '\s'
-endfunction
-
 colorscheme gruvbox
 
 augroup filetype_jsx
