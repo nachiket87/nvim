@@ -97,3 +97,6 @@ lua << EOF
   require('telescope').load_extension('gh')
   require('colorizer').setup()
 EOF
+
+" TRES IMPORTANTE
+let g:coc_node_path = '/Users/nachiket/.nvm/versions/node/v18.7.0/bin/node'
