@@ -24,5 +24,6 @@ call plug#begin('~/.config/plugged')
   Plug 'nvim-treesitter/nvim-treesitter', { 'do': ':TSUpdate' }
   Plug 'andymass/vim-matchup'
   Plug 'vim-test/vim-test'
-
+  Plug 'tpope/vim-dispatch'
+  Plug 'tpope/vim-repeat'
 call plug#end()

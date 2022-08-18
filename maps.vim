@@ -59,8 +59,8 @@ nnoremap <leader>fp :let @* = expand("%")<CR>
 
 "Rspec tests
 nmap <silent> <leader>t :TestFile<CR>
+nmap <silent> <leader>tt :TestNearest<CR>
 nmap <silent> <leader>gt :TestVisit<CR>
-nmap <silent> <leader>T :TestFile<CR>
 
 " new coc mappings
 function! s:check_back_space() abort

@@ -1,5 +1,5 @@
 " make test commands execute using dispatch.vim
-let test#strategy = "neovim"
+let test#strategy = "dispatch"
 let g:test#neovim#start_normal = 1
 let g:test#echo_command = 0
 let test#neovim#term_position = "vertical"

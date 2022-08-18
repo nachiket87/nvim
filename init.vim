@@ -45,7 +45,7 @@ runtime ./maps.vim
 
 let g:coc_global_extensions = ['coc-emmet', 'coc-css', 'coc-html', 'coc-json', 'coc-tsserver', 'coc-eslint', 'coc-prettier', 'coc-solargraph']
 
-command! -nargs=0 Prettier :CocCommand prettier.formatFile
+command! -nargs=0 Prettier :CocCommand prettier.forceFormatDocument "prettier.formatFile
 command! -bang -nargs=* Rg
   \ call fzf#vim#grep(
   \   'rg --column --line-number --no-heading --color=always --smart-case -- '.shellescape(<q-args>), 1,
@@ -100,3 +100,4 @@ EOF
 
 " TRES IMPORTANTE
 let g:coc_node_path = '/Users/nachiket/.nvm/versions/node/v18.7.0/bin/node'
+let g:loaded_perl_provider = 0
