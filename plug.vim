@@ -4,7 +4,6 @@ call plug#begin('~/.config/plugged')
   Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
   Plug 'junegunn/fzf.vim'
   Plug 'nvim-lualine/lualine.nvim'
-  Plug 'vim-airline/vim-airline-themes'
   Plug 'tpope/vim-fugitive'
   Plug 'tpope/vim-rhubarb'
   Plug 'tpope/vim-bundler'
@@ -18,9 +17,8 @@ call plug#begin('~/.config/plugged')
   Plug 'nvim-telescope/telescope-fzy-native.nvim'
   Plug 'nvim-telescope/telescope-github.nvim'
   Plug 'norcalli/nvim-colorizer.lua'
-  Plug 'kyazdani42/nvim-web-devicons'
-  Plug 'kyazdani42/nvim-tree.lua'
-  Plug 'ryanoasis/vim-devicons'
+ Plug 'nvim-tree/nvim-tree.lua'
+  Plug 'nvim-tree/nvim-web-devicons'
   Plug 'nvim-treesitter/nvim-treesitter', { 'do': ':TSUpdate' }
   Plug 'andymass/vim-matchup'
   Plug 'vim-test/vim-test'

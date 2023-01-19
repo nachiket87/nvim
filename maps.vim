@@ -83,3 +83,6 @@ else
 endif
 
 inoremap <expr> <cr> coc#pum#visible() ? coc#_select_confirm() : "\<CR>"
+nnoremap <leader>gw :Dispatch! gh pr view --web<cr>
+nnoremap <leader>ghr :Dispatch! gh repo view --web<cr>
+

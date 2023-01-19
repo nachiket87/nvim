@@ -85,6 +85,8 @@ augroup END
 filetype plugin indent on
 
 lua << EOF
+    vim.g.loaded_netrw = 1
+    vim.g.loaded_netrwPlugin = 1
   require('telescope').setup {
       extensions = {
           fzy_native = {
@@ -99,5 +101,5 @@ lua << EOF
 EOF
 
 " TRES IMPORTANTE
-let g:coc_node_path = '/Users/nachiket/.nvm/versions/node/v18.7.0/bin/node'
+let g:coc_node_path = '/usr/local/Cellar/node/19.4.0_1/bin/node'
 let g:loaded_perl_provider = 0

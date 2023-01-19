@@ -14,7 +14,6 @@
     "scss",
     "yaml"
   ],
-  "tsserver.formatOnType": true,
   "coc.preferences.formatOnType": true,
   "coc.preferences.jumpCommand": "vsplit",
   "snippets.extends": {
