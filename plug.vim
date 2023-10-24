@@ -17,7 +17,7 @@ call plug#begin('~/.config/plugged')
   Plug 'nvim-telescope/telescope-fzy-native.nvim'
   Plug 'nvim-telescope/telescope-github.nvim'
   Plug 'norcalli/nvim-colorizer.lua'
- Plug 'nvim-tree/nvim-tree.lua'
+  Plug 'nvim-tree/nvim-tree.lua'
   Plug 'nvim-tree/nvim-web-devicons'
   Plug 'nvim-treesitter/nvim-treesitter', { 'do': ':TSUpdate' }
   Plug 'andymass/vim-matchup'

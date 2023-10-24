@@ -20,7 +20,8 @@ require'nvim-treesitter.configs'.setup {
     "yaml",
     "html",
     "scss",
-    "ruby"
+    "ruby",
+    "go"
   },
   matchup = {
     enable = true,              -- mandatory, false will disable the whole extension

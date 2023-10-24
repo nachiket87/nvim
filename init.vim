@@ -1,3 +1,5 @@
+let g:loaded_netrwPlugin = 1
+let g:loaded_netrw= 1
 set noshowmatch
 syntax enable
 set formatoptions-=cro
@@ -43,7 +45,7 @@ set backupskip=/tmp/*,/private/tmp/* " Let me edit crontab files
 runtime ./plug.vim
 runtime ./maps.vim
 
-let g:coc_global_extensions = ['coc-emmet', 'coc-css', 'coc-html', 'coc-json', 'coc-tsserver', 'coc-eslint', 'coc-prettier', 'coc-solargraph']
+let g:coc_global_extensions = ['coc-emmet', 'coc-css', 'coc-html', 'coc-json', 'coc-tsserver', 'coc-eslint', 'coc-prettier'] 
 
 command! -nargs=0 Prettier :CocCommand prettier.forceFormatDocument "prettier.formatFile
 command! -bang -nargs=* Rg
@@ -85,8 +87,6 @@ augroup END
 filetype plugin indent on
 
 lua << EOF
-    vim.g.loaded_netrw = 1
-    vim.g.loaded_netrwPlugin = 1
   require('telescope').setup {
       extensions = {
           fzy_native = {
@@ -100,6 +100,21 @@ lua << EOF
   require('colorizer').setup()
 EOF
 
-" TRES IMPORTANTE
-let g:coc_node_path = '/usr/local/Cellar/node/19.4.0_1/bin/node'
 let g:loaded_perl_provider = 0
+let g:loaded_netrwPlugin = 1
+
+lua << EOF
+  vim.opt.signcolumn = "yes" -- otherwise it bounces in and out, not strictly needed though
+  vim.api.nvim_create_autocmd("FileType", {
+    pattern = "ruby",
+    group = vim.api.nvim_create_augroup("RubyLSP", { clear = true }), -- also this is not /needed/ but it's good practice 
+    callback = function()
+      vim.lsp.start {
+        name = "standard",
+        cmd = { "/Users/nachiket/.rbenv/shims/standardrb", "--lsp" },
+      }
+    end,
+  })
+EOF
+
+command! -nargs=1 Browse silent execute '!open' shellescape(<q-args>,1)

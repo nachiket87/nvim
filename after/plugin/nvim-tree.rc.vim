@@ -8,12 +8,10 @@ lua << EOF
   require'nvim-tree'.setup {
     disable_netrw       = true,
     hijack_netrw        = true,
-    open_on_setup       = false,
-    ignore_ft_on_setup  = {},
     open_on_tab         = false,
     hijack_cursor       = false,
-    update_cwd          = false,
-    sync_root_with_cwd = false,
+    update_focused_file = true,
+    sync_root_with_cwd = true,
     diagnostics = {
       enable = false,
       icons = {
@@ -38,12 +36,7 @@ lua << EOF
     },
     view = {
       width = 30,
-      hide_root_folder = false,
-      side = 'left',
-      mappings = {
-        custom_only = false,
-        list = {}
-      }
+      side = 'left'
     }
   }
 EOF
