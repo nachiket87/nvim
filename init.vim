@@ -87,34 +87,20 @@ augroup END
 filetype plugin indent on
 
 lua << EOF
-  require('telescope').setup {
-      extensions = {
-          fzy_native = {
-              override_generic_sorter = true,
-              override_file_sorter = true,
-          }
-      }
-  }
-  require('telescope').load_extension('fzy_native')
-  require('telescope').load_extension('gh')
-  require('colorizer').setup()
+require('telescope').setup {
+    extensions = {
+        fzy_native = {
+            override_generic_sorter = true,
+            override_file_sorter = true,
+        }
+    }
+}
+require('telescope').load_extension('fzy_native')
+require('telescope').load_extension('gh')
+require('colorizer').setup()
 EOF
 
 let g:loaded_perl_provider = 0
-let g:loaded_netrwPlugin = 1
-
-lua << EOF
-  vim.opt.signcolumn = "yes" -- otherwise it bounces in and out, not strictly needed though
-  vim.api.nvim_create_autocmd("FileType", {
-    pattern = "ruby",
-    group = vim.api.nvim_create_augroup("RubyLSP", { clear = true }), -- also this is not /needed/ but it's good practice 
-    callback = function()
-      vim.lsp.start {
-        name = "standard",
-        cmd = { "/Users/nachiket/.rbenv/shims/standardrb", "--lsp" },
-      }
-    end,
-  })
-EOF
 
 command! -nargs=1 Browse silent execute '!open' shellescape(<q-args>,1)
+autocmd BufWritePre *.go :silent call CocAction('runCommand', 'editor.action.organizeImport')

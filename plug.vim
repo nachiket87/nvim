@@ -24,4 +24,5 @@ call plug#begin('~/.config/plugged')
   Plug 'vim-test/vim-test'
   Plug 'tpope/vim-dispatch'
   Plug 'tpope/vim-repeat'
+  Plug 'shaunsingh/solarized.nvim'
 call plug#end()
