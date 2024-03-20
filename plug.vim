@@ -25,4 +25,5 @@ call plug#begin('~/.config/plugged')
   Plug 'tpope/vim-dispatch'
   Plug 'tpope/vim-repeat'
   Plug 'shaunsingh/solarized.nvim'
+  Plug 'lukas-reineke/indent-blankline.nvim'
 call plug#end()
