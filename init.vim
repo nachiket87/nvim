@@ -91,16 +91,3 @@ let g:loaded_perl_provider = 0
 command! -nargs=1 Browse silent execute '!open' shellescape(<q-args>,1)
 autocmd BufWritePre *.go :silent call CocAction('runCommand', 'editor.action.organizeImport')
 
-lua << EOF
-  require('telescope').setup {
-      extensions = {
-          fzy_native = {
-              override_generic_sorter = true,
-              override_file_sorter = true,
-          }
-      }
-  }
-  require('telescope').load_extension('fzy_native')
-  require('telescope').load_extension('gh')
-  require('colorizer').setup()
-EOF
