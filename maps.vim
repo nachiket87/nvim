@@ -1,9 +1,4 @@
 let mapleader = " "
-inoremap <silent><expr> <C-space> coc#refresh()
-nmap <silent> gd <Plug>(coc-definition)
-nmap <silent> gy <Plug>(coc-type-definition)
-nmap <silent> gi <Plug>(coc-implementation)
-nmap <silent> gr <Plug>(coc-references)
 nnoremap <leader>h :wincmd h<CR>
 nnoremap <leader>j :wincmd j<CR>
 nnoremap <leader>k :wincmd k<CR>
@@ -12,8 +7,6 @@ nnoremap <leader>q :q<CR>
 nnoremap <leader>p :FZF<CR>
 nnoremap <leader>rt :Rg <C-R>=expand("<cword>")<CR><CR>
 nnoremap <leader>r :Rg<SPACE>
-nnoremap <leader>gr :CocSearch 
-nnoremap <leader>fe :CocFix<CR>
 nnoremap <leader>1 1gt<CR>
 nnoremap <leader>2 2gt<CR>
 nnoremap <leader>3 3gt<CR>
@@ -27,10 +20,6 @@ nnoremap <leader>+ :vertical resize +5<CR>
 nnoremap <Leader><CR> :e ~/.config/nvim/init.vim<CR>
 nnoremap <leader>gb :Buffers<CR>
 nnoremap <leader>- :vertical resize -5<CR>
-inoremap <silent><expr> <Tab>
-      \ pumvisible() ? "\<C-n>" :
-      \ <SID>check_back_space() ? "\<Tab>" :
-      \ coc#refresh()
 
 inoremap <silent><expr> <S-Tab> pumvisible() ? "\<C-P>" : "\<C-H>"
 inoremap <expr> <CR> pumvisible() ? "\<C-Y>" : "\<CR>"
@@ -48,8 +37,6 @@ nnoremap <leader>fb <cmd>Telescope buffers<cr>
 
 "NerdTree
 
-nnoremap <leader>ca :CocAction<CR>
-
 command W w
 command Q q
 
@@ -62,27 +49,6 @@ nmap <silent> <leader>t :TestFile<CR>
 nmap <silent> <leader>tt :TestNearest<CR>
 nmap <silent> <leader>gt :TestVisit<CR>
 
-" new coc mappings
-function! s:check_back_space() abort
-  let col = col('.') - 1
-  return !col || getline('.')[col - 1]  =~ '\s'
-endfunction
-
-" Insert <tab> when previous text is space, refresh completion if not.
-inoremap <silent><expr> <TAB>
-\ coc#pum#visible() ? coc#pum#next(1):
-\ <SID>check_back_space() ? "\<Tab>" :
-\ coc#refresh()
-inoremap <expr><S-TAB> coc#pum#visible() ? coc#pum#prev(1) : "\<C-h>"
-
-
-if has('nvim')
-  inoremap <silent><expr> <c-space> coc#refresh()
-else
-  inoremap <silent><expr> <c-@> coc#refresh()
-endif
-
-inoremap <expr> <cr> coc#pum#visible() ? coc#_select_confirm() : "\<CR>"
 nnoremap <leader>gw :Dispatch! gh pr view --web<cr>
 nnoremap <leader>ghr :Dispatch! gh repo view --web<cr>
 

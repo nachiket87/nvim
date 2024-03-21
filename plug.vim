@@ -1,5 +1,4 @@
 call plug#begin('~/.config/plugged')
-  Plug 'neoclide/coc.nvim', {'branch': 'release', 'do': ':CocUpdate'}
   Plug 'gruvbox-community/gruvbox'
   Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
   Plug 'junegunn/fzf.vim'
@@ -26,4 +25,6 @@ call plug#begin('~/.config/plugged')
   Plug 'tpope/vim-repeat'
   Plug 'shaunsingh/solarized.nvim'
   Plug 'lukas-reineke/indent-blankline.nvim'
+  Plug 'neovim/nvim-lspconfig'
+  Plug 'folke/neodev.nvim'
 call plug#end()

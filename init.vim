@@ -45,9 +45,6 @@ set backupskip=/tmp/*,/private/tmp/* " Let me edit crontab files
 runtime ./plug.vim
 runtime ./maps.vim
 
-let g:coc_global_extensions = ['coc-emmet', 'coc-css', 'coc-html', 'coc-json', 'coc-tsserver', 'coc-eslint', 'coc-prettier'] 
-
-command! -nargs=0 Prettier :CocCommand prettier.forceFormatDocument "prettier.formatFile
 command! -bang -nargs=* Rg
   \ call fzf#vim#grep(
   \   'rg --column --line-number --no-heading --color=always --smart-case -- '.shellescape(<q-args>), 1,
@@ -89,5 +86,23 @@ filetype plugin indent on
 let g:loaded_perl_provider = 0
 
 command! -nargs=1 Browse silent execute '!open' shellescape(<q-args>,1)
-autocmd BufWritePre *.go :silent call CocAction('runCommand', 'editor.action.organizeImport')
 
+lua << EOF
+  require("neodev").setup({
+    -- add any options here, or leave empty to use the default settings
+  })
+
+  -- then setup your lsp server as usual
+  local lspconfig = require('lspconfig')
+
+  -- example to setup lua_ls and enable call snippets
+  lspconfig.lua_ls.setup({
+    settings = {
+      Lua = {
+        completion = {
+          callSnippet = "Replace"
+        }
+      }
+    }
+  })
+EOF
